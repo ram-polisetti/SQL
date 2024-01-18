@@ -49,3 +49,26 @@ results.DataFrame()
 ```
 
 - Wont be able to write comments in the python way instead we can use SQL comments starting with '--'
+
+### [Wild Cards](https://www.w3schools.com/sql/sql_wildcards.asp)
+
+% -> Represents zero or more characters
+_ -> Represents a single character
+[] -> Represents any single character within the brackets \*
+^ -> Represents any character not in the brackets \*
+\- -> Represents any single character within the specified range \*
+{} -> Represents any escaped character \*\*
+? -> Represents any character
+
+\* Not supported in PostgreSQL and MySQL databases.
+\*\* Supported only in Oracle databases.
+
+***Cannot use `IN` and `LIKE` together***
+
+```sql
+SELECT *
+FROM actor
+WHERE first_name IN ('PENELOP%', 'N_CK', 'ED?') ;
+```
+
+- It runs successfully but wont return anything cause we didnn\'t explicitly mentioned `LIKE`
