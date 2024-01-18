@@ -1,9 +1,12 @@
 # [Master SQL for Data Science](https://www.linkedin.com/learning/paths/master-sql-for-data-science)
 
-## Working with DB in Python Environment
+## Module 1 - SQL: Data Reporting and Analysis
+
+### Working with DB in Python Environment
 
 ```python
 # Import necessary libraries
+!pip install sqlalchemy
 import sqlite3
 import pandas as pd
 
@@ -25,7 +28,7 @@ sql_query = ''' SELECT * FROM customer '''
 df = pd.read_sql(sql_query, con)
 ```
 
-## Another Method
+### Another Method
 
 ```bash
 !pip install ipython-sql
@@ -34,7 +37,13 @@ df = pd.read_sql(sql_query, con)
 
 %%sql
 SELECT * FROM customer;
-
 ```
 
-- Have to mention %%sql before the Query
+- Have to mention`%%sql` before the Query
+
+To convert the **result into a DataFrame**
+
+```python
+results = %sql SELECT * FROM customer;
+results.DataFrame()
+```
