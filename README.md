@@ -47,3 +47,5 @@ To convert the **result into a DataFrame**
 results = %sql SELECT * FROM customer;
 results.DataFrame()
 ```
+
+- Wont be able to write comments in the python way instead we can use SQL comments starting with '--'
